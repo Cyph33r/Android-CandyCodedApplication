@@ -38,10 +38,15 @@ public void createMapIntent(@NonNull View view){
    Intent mapIntent = new Intent(Intent.ACTION_VIEW, uri);
    mapIntent.setPackage("com.google.android.apps.maps");
    ComponentName result = mapIntent.resolveActivity(getPackageManager());
-   if(result != null){
+   if(result != null)
        startActivity(mapIntent);
-   }
 }
+public void createPhoneIntent(View view){
+        Intent dial = new Intent(Intent.ACTION_DIAL);
+        dial.setData(Uri.parse("tel:0123456789"));
+        startActivity(dial);
+}
+
     // ***
     // TODO - Task 2 - Launch the Google Maps Activity
     // ***
